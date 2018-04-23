@@ -2,85 +2,83 @@ package file;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
-import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import response.Result;
 
 public class Report {
 
-    /*public void saveFile (int linha, int coluna, String valor) {
+    private static final String NOME_ARQUIVO = "relatorio.xlsx";
+
+    public boolean atualizarRelatorio(ArrayList<Result> resultados) {
+        boolean ok = false;
         try {
-            // Criando o arquivo fisico
-            FileOutputStream out = new FileOutputStream("workbook.xls");
 
-            // Criando area de trabalho para o excel
-            Workbook wb = new HSSFWorkbook();
+            // Pegando o arquivo
+            File arquivo = new File(NOME_ARQUIVO);
+            // Abrindo a leitura
+            FileInputStream leitura = new FileInputStream(arquivo);
+            // Pegando o workbook
+            XSSFWorkbook workbook = new XSSFWorkbook(leitura);
+            // Pegando a pasta dentro do xlsx
+            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            // criando uma nova sheet
-            Sheet s = wb.createSheet();
+            XSSFRow row;
+            XSSFCell cell;
 
-            // Criando uma referencia para Linha
-            Row r = null;
+            for (Result resultado : resultados) {
+                // Pegando a linha
+                row = sheet.getRow(resultado.getRow());
 
-            // Referencia para Celula
-            Cell c = null;
+                // Pegando a celula
+                cell = row.getCell(resultado.getCell());
 
-            //Criando a primeira linha na LINHA zero, que seria o número 1
-            r = s.createRow(linha);
+                // Cria a celula caso nao exista
+                if (cell == null)
+                    cell = row.createCell(resultado.getCell());
 
-            //Criando a celula na posicao ZERO, que seria A, com referencia na linha ZERO criado acima ou seja, colocaremos
-            //informacao na A1
-            c = r.createCell(coluna);
+                // Altera o tipo da celula e o dado que sera inserido
+                cell.setCellType(CellType.NUMERIC);
+                cell.setCellValue(resultado.getDado());
 
-            //Colocando um valor
-            c.setCellValue("Testes");
+            }
 
+            // Salva a data no arquivo
+            row = sheet.getRow(0);
+            cell = row.getCell(1);
+            cell.setCellType(CellType.STRING);
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            Date date = new Date();
+            cell.setCellValue(dateFormat.format(date));
 
-            // Salvando o arquivo
-            wb.write(out);
-            out.close();
+            // Escreve no arquivo
+            FileOutputStream fileOut = new FileOutputStream(NOME_ARQUIVO);
+            workbook.write(fileOut);
+            fileOut.close();
 
-            FileOutputStream output_file =new FileOutputStream("workbook.xls");  //Open FileOutputStream to write updates
+            // Fecha o workbook
+            workbook.close();
 
-            wb.write(output_file); //write changes
-
-            output_file.close();  //close the stream
+            ok = true;
+        } catch (FileNotFoundException e) {
+            System.err.println("Nao foi possivel encontrar o arquivo solicitado.");
         } catch (Exception e) {
+            System.err.println("Erro inesperado.");
             e.printStackTrace();
         }
-    } */
 
-    public void saveFile (String valor, int linha, int coluna) {
-
-        try {
-            FileInputStream fsIP = new FileInputStream(new File("workbook.xls")); //Read the spreadsheet that needs to be updated
-
-            HSSFWorkbook wb = new HSSFWorkbook(fsIP); //Access the workbook
-
-            HSSFSheet worksheet = wb.getSheetAt(0); //Access the worksheet, so that we can update / modify it.
-
-            Cell cell = null; // declare a Cell object
-
-            cell = worksheet.getRow(0).getCell(0);   // Access the second cell in second row to update the value
-
-            cell.setCellValue(valor);  // Get current cell value value and overwrite the value
-
-            fsIP.close(); //Close the InputStream
-
-            FileOutputStream output_file = new FileOutputStream(new File("workbook.xls"));  //Open FileOutputStream to write updates
-
-            wb.write(output_file); //write changes
-
-            output_file.close();  //close the stream
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return ok;
     }
-
 }

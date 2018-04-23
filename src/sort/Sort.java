@@ -1,8 +1,12 @@
 package sort;
 
+import response.Result;
+
 public interface Sort  {
 
-    public long realizarOrdenacao(int tamanhoVetor);
-    public void ordenar();
-    public String getNomeMetodo();
+    Result ordenarMelhorCaso (int tamanhoVetor);
+    Result ordenarPiorCaso (int tamanhoVetor);
+    Result ordenarCasoMedio (int tamanhoVetor);
+    String getNomeMetodo();
+
 }

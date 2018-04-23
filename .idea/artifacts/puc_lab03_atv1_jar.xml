@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="puc-lab03-atv1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/puc_lab03_atv1_jar</output-path>
+    <root id="archive" name="puc-lab03-atv1.jar">
+      <element id="module-output" name="puc-lab03-atv1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bibliotecas/commons-collections4-4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bibliotecas/xmlbeans-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bibliotecas/poi-ooxml-schemas-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bibliotecas/poi-ooxml-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bibliotecas/poi-3.17.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

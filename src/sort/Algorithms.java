@@ -21,13 +21,36 @@ public class Algorithms {
 
     }
 
-    public void ordenar(){
-
-    }
-
     public String getNomeMetodo() {
         return nomeMetodo;
     }
 
+    public void ordenarVetorDecrescente () {
+        for (int i = vetor.length-1; i >= 0; i--){
 
+            int aux = vetor[i];
+            int j = i;
+
+            while ((j > 0) && (vetor[j-1] > aux)){
+                vetor[j] = vetor[j-1];
+                j -= 1;
+            }
+            vetor[j] = aux;
+        }
+    }
+
+    public void ordenar() {
+        for (int i = 1; i < vetor.length; i++){
+
+            int aux = vetor[i];
+            int j = i;
+
+            while ((j > 0) && (vetor[j-1] > aux)){
+                vetor[j] = vetor[j-1];
+                j -= 1;
+            }
+            vetor[j] = aux;
+
+        }
+    }
 }
