@@ -1,15 +1,12 @@
 import file.Report;
 import response.Result;
-import sort.Insertion;
-import sort.Merge;
-import sort.Quick;
-import sort.Sort;
+import sort.*;
 
 import java.util.ArrayList;
 
 public class App {
 
-    private static Sort ordenadores[] = new Sort[3];
+    private static Sort ordenadores[] = new Sort[4];
     public static final int TAMANHOS[] = { 1000000, 10000000 };
 
     public static void main(String[] args) {
@@ -19,6 +16,7 @@ public class App {
         ordenadores[0] = new Insertion();
         ordenadores[1] = new Merge();
         ordenadores[2] = new Quick();
+        ordenadores[3] = new Shell();
 
         Report report = new Report();
 

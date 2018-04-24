@@ -53,6 +53,20 @@ public class Report {
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getDado());
 
+                // Pegando a linha
+                row = sheet.getRow(resultado.getRow());
+
+                // Pegando a celula
+                cell = row.getCell(resultado.getCell()+1);
+
+                // Cria a celula caso nao exista
+                if (cell == null)
+                    cell = row.createCell(resultado.getCell());
+
+                // Altera o tipo da celula e o dado que sera inserido
+                cell.setCellType(CellType.NUMERIC);
+                cell.setCellValue(resultado.getComparacoes());
+
             }
 
             // Salva a data no arquivo
