@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class App {
 
     private static Sort ordenadores[] = new Sort[7];
-    public static final int TAMANHOS[] = { 50000, 80000 };
+    public static final int TAMANHOS[] = { 10000, 20000 };
     public static final int THREADS = 4;
     public static Processador[] proc;
 

@@ -1,5 +1,6 @@
 package sort;
 
+import response.AlgorithmsResult;
 import response.Result;
 
 public class Merge extends Algorithms implements Sort {
@@ -13,22 +14,22 @@ public class Merge extends Algorithms implements Sort {
     @Override
     public Result ordenarMelhorCaso (int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
-        int timeTotal = magicMelhorCaso();
-        return new Result(2, 7, timeTotal, comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
+        AlgorithmsResult resultado = magicMelhorCaso();
+        return new Result(2, 7, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
-        int timeTotal = magicMedioCaso();
-        return new Result(2, 8, timeTotal, comparacoes, "Ordenacao Caso Medio", tamanhoVetor);
+        AlgorithmsResult resultado = magicMedioCaso();
+        return new Result(2, 8, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes, "Ordenacao Caso Medio", tamanhoVetor);
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
-        int timeTotal = magicPiorCaso();
-        return new Result(2, 9, timeTotal, comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
+        AlgorithmsResult resultado = magicPiorCaso();
+        return new Result(2, 9, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
     }
 
     @Override

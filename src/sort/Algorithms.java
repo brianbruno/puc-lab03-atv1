@@ -1,14 +1,18 @@
 package sort;
 
+import response.AlgorithmsResult;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Algorithms {
 
     int comparacoes;
     int vetor[];
-    int tamanhoVetor;
     String nomeMetodo;
-    public static final int REPETICOES = 100;
+    public static final int REPETICOES = 10;
+    int tamanhoVetor;
+    ArrayList<Integer> tempos;
 
     public Algorithms(String nomeMetodo) {
         this.nomeMetodo = nomeMetodo;
@@ -70,37 +74,61 @@ public class Algorithms {
         return (int) timeTotal;
     }
 
-    public int magicMelhorCaso() {
-        int timeTotal = 0; int i = 0;
+    public AlgorithmsResult magicMelhorCaso() {
+        int i = 0;
+        tempos = new ArrayList<>();
         while (i < REPETICOES) {
             preencherVetor(tamanhoVetor);
             // ordeno pois eh o melhor caso
             ordenarVetor();
-            timeTotal += sortMagic();
+            tempos.add(sortMagic());
             i++;
         }
-        return timeTotal/REPETICOES;
+        return new AlgorithmsResult(getMean(), getStdDev());
     }
 
-    public int magicMedioCaso() {
-        int timeTotal = 0; int i = 0;
+    public AlgorithmsResult magicMedioCaso() {
+        int i = 0;
+
         while (i < REPETICOES) {
             preencherVetor(tamanhoVetor);
-            timeTotal += sortMagic();
+            tempos.add(sortMagic());
             i++;
         }
-        return timeTotal/REPETICOES;
+
+        return new AlgorithmsResult(getMean(), getStdDev());
     }
 
-    public int magicPiorCaso () {
-        int timeTotal = 0; int i = 0;
+    public AlgorithmsResult magicPiorCaso () {
+        int i = 0;
         while (i < REPETICOES) {
             preencherVetor(tamanhoVetor);
             // desordeno pois é o pior caso
             ordenarVetorDecrescente();
-            timeTotal += sortMagic();
+            tempos.add(sortMagic());
             i++;
         }
-        return timeTotal/REPETICOES;
+        return new AlgorithmsResult(getMean(), getStdDev());
     }
+
+    public double getMean() {
+
+        double sum = 0.0;
+        for(int a : tempos)
+            sum += a;
+        return sum/tempos.size();
+    }
+
+    public double getVariance() {
+        double mean = getMean();
+        double temp = 0;
+        for(double a : tempos)
+            temp += (a-mean)*(a-mean);
+        return temp/(tempos.size()-1);
+    }
+
+    public  double getStdDev() {
+        return Math.sqrt(getVariance());
+    }
+
 }

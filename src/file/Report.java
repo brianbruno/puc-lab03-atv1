@@ -53,17 +53,22 @@ public class Report {
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getDado());
 
-                // Pegando a linha
-                row = sheet.getRow(resultado.getRow());
+                // Salvando desbio padrão
+                cell = row.getCell(resultado.getCell()+1);
 
-                // Pegando a celula
+                if (cell == null)
+                    cell = row.createCell(resultado.getCell()+1);
+
+                cell.setCellType(CellType.NUMERIC);
+                cell.setCellValue(resultado.getDesvioPadrao());
+
+                // Salvando as comparações
+
                 cell = row.getCell(resultado.getCell()+2);
 
-                // Cria a celula caso nao exista
                 if (cell == null)
-                    cell = row.createCell(resultado.getCell());
+                    cell = row.createCell(resultado.getCell()+2);
 
-                // Altera o tipo da celula e o dado que sera inserido
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getComparacoes());
 
