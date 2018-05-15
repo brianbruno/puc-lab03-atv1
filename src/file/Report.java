@@ -22,7 +22,7 @@ public class Report {
 
     private static final String NOME_ARQUIVO = "relatorio.xlsx";
 
-    public boolean atualizarRelatorio(ArrayList<Result> resultados) {
+    public synchronized boolean atualizarRelatorio(ArrayList<Result> resultados) {
         boolean ok = false;
         try {
 
@@ -52,6 +52,20 @@ public class Report {
                 // Altera o tipo da celula e o dado que sera inserido
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getDado());
+
+                // Pegando a linha
+                row = sheet.getRow(resultado.getRow());
+
+                // Pegando a celula
+                cell = row.getCell(resultado.getCell()+2);
+
+                // Cria a celula caso nao exista
+                if (cell == null)
+                    cell = row.createCell(resultado.getCell());
+
+                // Altera o tipo da celula e o dado que sera inserido
+                cell.setCellType(CellType.NUMERIC);
+                cell.setCellValue(resultado.getComparacoes());
 
             }
 

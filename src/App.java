@@ -1,3 +1,5 @@
+import core.Ordenadores;
+import core.Processador;
 import file.Report;
 import response.Result;
 import sort.*;
@@ -6,34 +8,42 @@ import java.util.ArrayList;
 
 public class App {
 
-    private static Sort ordenadores[] = new Sort[6];
-    public static final int TAMANHOS[] = { 1000000, 10000000 };
+    private static Sort ordenadores[] = new Sort[7];
+    public static final int TAMANHOS[] = { 50000, 80000 };
+    public static final int THREADS = 4;
+    public static Processador[] proc;
 
     public static void main(String[] args) {
 
         System.out.println("### Algoritmos de Ordenacao ###");
 
-        ordenadores[0] = new Insertion();
-        ordenadores[1] = new Merge();
-        ordenadores[2] = new Quick();
-        ordenadores[3] = new Shell();
-        ordenadores[4] = new Heap();
-        ordenadores[5] = new Bubble();
-
+        Ordenadores sorters = new Ordenadores();
+        proc = new Processador[THREADS * TAMANHOS.length];
         Report report = new Report();
 
-        for (int tam : TAMANHOS) {
-            System.out.println("Tamanho do arranjo: " + tam);
-            for (Sort sorter : ordenadores) {
-                System.out.println(sorter.getNomeMetodo());
-                ArrayList<Result> resultados = new ArrayList();
+        for(int tam: TAMANHOS) {
+            sorters.novoOrdenador(new Insertion(), tam);
+            sorters.novoOrdenador(new Merge(), tam);
+            sorters.novoOrdenador(new Quick(), tam);
+            sorters.novoOrdenador(new Selection(), tam);
+            sorters.novoOrdenador(new Shell(), tam);
+            sorters.novoOrdenador(new Heap(), tam);
+            sorters.novoOrdenador(new Bubble(), tam);
+        }
 
-                resultados.add(sorter.ordenarMelhorCaso(tam));
-                resultados.add(sorter.ordenarCasoMedio(tam));
-                resultados.add(sorter.ordenarPiorCaso(tam));
+        for (int i = 0; i < THREADS; i++) {
+            proc[i] = new Processador(sorters, report);
+            proc[i].start();
+            i++;
+        }
 
-                if (!report.atualizarRelatorio(resultados))
-                    System.err.println("Erro ao salvar o arquivo");
+        for (int i = 0; i<proc.length; i++) {
+            try {
+                if(proc[i] != null) {
+                    proc[i].join();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 

@@ -12,38 +12,38 @@ public class Merge extends Algorithms implements Sort {
 
     @Override
     public Result ordenarMelhorCaso (int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        this.helper = new int[tamanhoVetor];
-        // ordeno pois eh o melhor caso
-        ordenar();
-        long timeStart = System.currentTimeMillis();
-        mergesort(0,tamanhoVetor-1);
-        long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 6,(int) timeTotal, "Ordenacao Melhor Caso", tamanhoVetor);
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicMelhorCaso();
+        return new Result(2, 7, timeTotal, comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        this.helper = new int[tamanhoVetor];
-        long timeStart = System.currentTimeMillis();
-        mergesort(0,tamanhoVetor-1);
-        long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 7,(int) timeTotal, "Ordenacao Caso Medio", tamanhoVetor);
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicMedioCaso();
+        return new Result(2, 8, timeTotal, comparacoes, "Ordenacao Caso Medio", tamanhoVetor);
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        ordenarVetorDecrescente();
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicPiorCaso();
+        return new Result(2, 9, timeTotal, comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
+    }
+
+    @Override
+    public int sortMagic() {
+        comparacoes = 0;
+        long timeTotal = 0;
+        int tamanhoVetor = vetor.length;
         this.helper = new int[tamanhoVetor];
+
         long timeStart = System.currentTimeMillis();
         mergesort(0,tamanhoVetor-1);
         long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 8,(int) timeTotal, "Ordenacao Pior Caso", tamanhoVetor);
+        timeTotal += timeEnd - timeStart;
+
+        return (int) timeTotal;
     }
 
     private void mergesort(int low, int high) {
@@ -72,7 +72,7 @@ public class Merge extends Algorithms implements Sort {
         int k = low;
         // Copy the smallest values from either the left or the right side back
         // to the original array
-        while (i <= middle && j <= high) {
+        while (comparacoes++>-1 && i <= middle && j <= high) {
             if (helper[i] <= helper[j]) {
                 vetor[k] = helper[i];
                 i++;

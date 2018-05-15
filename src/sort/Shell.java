@@ -10,53 +10,44 @@ public class Shell extends Algorithms implements Sort {
 
     @Override
     public Result ordenarMelhorCaso (int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        // ordeno pois eh o melhor caso
-        ordenar();
-        long timeStart = System.currentTimeMillis();
-        shellSort(vetor, vetor.length);
-        long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 15,(int) timeTotal, "Ordenacao Melhor Caso", tamanhoVetor);
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicMelhorCaso();
+        return new Result(2, 16, timeTotal, comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        long timeStart = System.currentTimeMillis();
-        shellSort(vetor, vetor.length);
-        long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 16,(int) timeTotal, "Ordenacao Caso Medio", tamanhoVetor);
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicMedioCaso();
+        return new Result(2, 17, timeTotal, comparacoes,"Ordenacao Caso Medio", tamanhoVetor);
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
-        preencherVetor(tamanhoVetor);
-        ordenarVetorDecrescente();
-        long timeStart = System.currentTimeMillis();
-        shellSort(vetor, vetor.length);
-        long timeEnd = System.currentTimeMillis();
-        long timeTotal = timeEnd - timeStart;
-        return new Result(2, 17,(int) timeTotal, "Ordenacao Pior Caso", tamanhoVetor);
+        this.tamanhoVetor = tamanhoVetor;
+        int timeTotal = magicPiorCaso();
+        return new Result(2, 18, timeTotal, comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
     }
 
-    void shellSort(int[] array, int number_of_elements) {
+    public void ordenarVetor(){
+        int i , j , temp, size = vetor.length;
 
-        int increment, i, temp, j;
+        int incremento = 1;
+        while(incremento < size) {
+            incremento = 3 * incremento + 1;
+        }
 
-        for (increment = number_of_elements / 2; increment > 0; increment /= 2) {
-            for (i = increment; i < number_of_elements; i++)
-            {
-                temp = array[i];
-                for (j = i; j >= increment; j -= increment) {
-                    if (temp < array[j - increment]) {
-                        array[j] = array[j - increment];
-                    } else {
-                        break;
-                    }
+        while (incremento > 1) {
+            incremento /= 3;
+
+            for(i = incremento; i < size; i++) {
+                temp = vetor[i];
+                j = i - incremento;
+                while (comparacoes++>-1 && j >= 0 && temp < vetor[j]) {
+                    vetor[j + incremento] = vetor[j];
+                    j -= incremento;
                 }
-                array[j] = temp;
+                vetor[j + incremento] = temp;
             }
         }
     }
