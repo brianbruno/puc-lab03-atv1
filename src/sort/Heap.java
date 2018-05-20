@@ -13,21 +13,21 @@ public class Heap extends Algorithms implements Sort {
     public Result ordenarMelhorCaso (int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMelhorCaso();
-        return new Result(2, 19, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
+        return new Result(2, 19, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMedioCaso();
-        return new Result(2, 20, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes, "Ordenacao Caso Medio", tamanhoVetor);
+        return new Result(2, 20, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes, "Ordenacao Caso Medio", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicPiorCaso();
-        return new Result(2, 21, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
+        return new Result(2, 21, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     public void ordenarVetor() {
@@ -44,7 +44,7 @@ public class Heap extends Algorithms implements Sort {
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-
+            trocas++;
             // call max heapify on the reduced heap
             heapify(arr, i, 0);
         }
@@ -70,6 +70,7 @@ public class Heap extends Algorithms implements Sort {
             int swap = arr[i];
             arr[i] = arr[largest];
             arr[largest] = swap;
+            trocas++;
 
             // Recursively heapify the affected sub-tree
             heapify(arr, n, largest);

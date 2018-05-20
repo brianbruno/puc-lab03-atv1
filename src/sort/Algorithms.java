@@ -10,9 +10,10 @@ public class Algorithms {
     int comparacoes;
     int vetor[];
     String nomeMetodo;
-    public static final int REPETICOES = 10;
+    public static final int REPETICOES = 5;
     int tamanhoVetor;
     ArrayList<Integer> tempos;
+    int trocas = 0;
 
     public Algorithms(String nomeMetodo) {
         this.nomeMetodo = nomeMetodo;
@@ -48,12 +49,14 @@ public class Algorithms {
     }
 
     public void ordenarVetor() {
+        trocas = 0;
         for (int i = 1; i < vetor.length; i++){
 
             int aux = vetor[i];
             int j = i;
 
             while (comparacoes++ > -1 && (j > 0) && (vetor[j-1] > aux)){
+                trocas++;
                 vetor[j] = vetor[j-1];
                 j -= 1;
             }
@@ -64,6 +67,7 @@ public class Algorithms {
 
     public int sortMagic() {
         comparacoes = 0;
+        trocas = 0;
         long timeTotal = 0;
 
         long timeStart = System.currentTimeMillis();
@@ -84,7 +88,7 @@ public class Algorithms {
             tempos.add(sortMagic());
             i++;
         }
-        return new AlgorithmsResult(getMean(), getStdDev());
+        return new AlgorithmsResult(getMean(), getStdDev(), trocas);
     }
 
     public AlgorithmsResult magicMedioCaso() {
@@ -96,7 +100,7 @@ public class Algorithms {
             i++;
         }
 
-        return new AlgorithmsResult(getMean(), getStdDev());
+        return new AlgorithmsResult(getMean(), getStdDev(), trocas);
     }
 
     public AlgorithmsResult magicPiorCaso () {
@@ -108,7 +112,7 @@ public class Algorithms {
             tempos.add(sortMagic());
             i++;
         }
-        return new AlgorithmsResult(getMean(), getStdDev());
+        return new AlgorithmsResult(getMean(), getStdDev(), trocas);
     }
 
     public double getMean() {

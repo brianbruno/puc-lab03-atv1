@@ -7,10 +7,11 @@ public class Result {
     private double dado;
     private double desvioPadrao;
     private int comparacoes;
+    private int trocas;
     private String descricao;
-    public static final int TAMANHOS[] = { 10000, 11000 };
+    public static final int TAMANHOS[] = { 500000, 600000, 700000, 800000 };
 
-    public Result(int cell, int row, double dado, double desvioPadrao, int comparacoes, String descricao, int tamanhoVetor) {
+    public Result(int cell, int row, double dado, double desvioPadrao, int comparacoes, String descricao, int tamanhoVetor, int trocas) {
         int somador = 0;
         for(int tam : TAMANHOS) {
             if(tam == tamanhoVetor)
@@ -22,6 +23,8 @@ public class Result {
         this.dado = dado;
         this.descricao = descricao;
         this.comparacoes = comparacoes;
+        this.trocas = trocas;
+        this.desvioPadrao = desvioPadrao;
     }
 
     public int getCell() {
@@ -70,5 +73,13 @@ public class Result {
 
     public void setDesvioPadrao(double desvioPadrao) {
         this.desvioPadrao = desvioPadrao;
+    }
+
+    public int getTrocas() {
+        return trocas;
+    }
+
+    public void setTrocas(int trocas) {
+        this.trocas = trocas;
     }
 }

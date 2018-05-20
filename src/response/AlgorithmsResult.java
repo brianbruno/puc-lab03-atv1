@@ -4,10 +4,12 @@ public class AlgorithmsResult {
 
     double media;
     double desvioPadrao;
+    int trocas;
 
-    public AlgorithmsResult(double media, double desvioPadrao) {
+    public AlgorithmsResult(double media, double desvioPadrao, int trocas) {
         this.media = media;
         this.desvioPadrao = desvioPadrao;
+        this.trocas = trocas;
     }
 
     public double getMedia() {
@@ -24,5 +26,13 @@ public class AlgorithmsResult {
 
     public void setDesvioPadrao(double desvioPadrao) {
         this.desvioPadrao = desvioPadrao;
+    }
+
+    public int getTrocas() {
+        return trocas;
+    }
+
+    public void setTrocas(int trocas) {
+        this.trocas = trocas;
     }
 }

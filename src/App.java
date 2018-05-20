@@ -9,41 +9,34 @@ import java.util.ArrayList;
 public class App {
 
     private static Sort ordenadores[] = new Sort[7];
-    public static final int TAMANHOS[] = { 10000, 20000 };
-    public static final int THREADS = 4;
-    public static Processador[] proc;
+    public static final int TAMANHOS[] = { 500000, 600000, 700000, 800000 };
 
     public static void main(String[] args) {
 
         System.out.println("### Algoritmos de Ordenacao ###");
 
-        Ordenadores sorters = new Ordenadores();
-        proc = new Processador[THREADS * TAMANHOS.length];
+        ordenadores[0] = new Insertion();
+        ordenadores[1] = new Merge();
+        ordenadores[2] = new Quick();
+        ordenadores[3] = new Selection();
+        ordenadores[4] = new Shell();
+        ordenadores[5] = new Heap();
+        ordenadores[6] = new Bubble();
+
         Report report = new Report();
 
-        for(int tam: TAMANHOS) {
-            sorters.novoOrdenador(new Insertion(), tam);
-            sorters.novoOrdenador(new Merge(), tam);
-            sorters.novoOrdenador(new Quick(), tam);
-            sorters.novoOrdenador(new Selection(), tam);
-            sorters.novoOrdenador(new Shell(), tam);
-            sorters.novoOrdenador(new Heap(), tam);
-            sorters.novoOrdenador(new Bubble(), tam);
-        }
+        for (int tam : TAMANHOS) {
+            System.out.println("Tamanho do arranjo: " + tam);
+            for (Sort sorter : ordenadores) {
+                System.out.println(sorter.getNomeMetodo());
+                ArrayList<Result> resultados = new ArrayList<>();
 
-        for (int i = 0; i < THREADS; i++) {
-            proc[i] = new Processador(sorters, report);
-            proc[i].start();
-            i++;
-        }
+                resultados.add(sorter.ordenarMelhorCaso(tam));
+                resultados.add(sorter.ordenarCasoMedio(tam));
+                resultados.add(sorter.ordenarPiorCaso(tam));
 
-        for (int i = 0; i<proc.length; i++) {
-            try {
-                if(proc[i] != null) {
-                    proc[i].join();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+                if (!report.atualizarRelatorio(resultados))
+                    System.err.println("Erro ao salvar o arquivo");
             }
         }
 

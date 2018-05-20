@@ -53,7 +53,7 @@ public class Report {
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getDado());
 
-                // Salvando desbio padrão
+                // Salvando desvio padrão
                 cell = row.getCell(resultado.getCell()+1);
 
                 if (cell == null)
@@ -71,6 +71,16 @@ public class Report {
 
                 cell.setCellType(CellType.NUMERIC);
                 cell.setCellValue(resultado.getComparacoes());
+
+                // Salvando trocas
+
+                cell = row.getCell(resultado.getCell()+4);
+
+                if (cell == null)
+                    cell = row.createCell(resultado.getCell()+4);
+
+                cell.setCellType(CellType.NUMERIC);
+                cell.setCellValue(resultado.getTrocas());
 
             }
 

@@ -15,26 +15,27 @@ public class Merge extends Algorithms implements Sort {
     public Result ordenarMelhorCaso (int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMelhorCaso();
-        return new Result(2, 7, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
+        return new Result(2, 7, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMedioCaso();
-        return new Result(2, 8, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes, "Ordenacao Caso Medio", tamanhoVetor);
+        return new Result(2, 8, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes, "Ordenacao Caso Medio", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicPiorCaso();
-        return new Result(2, 9, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
+        return new Result(2, 9, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public int sortMagic() {
         comparacoes = 0;
+        trocas = 0;
         long timeTotal = 0;
         int tamanhoVetor = vetor.length;
         this.helper = new int[tamanhoVetor];
@@ -76,9 +77,11 @@ public class Merge extends Algorithms implements Sort {
         while (comparacoes++>-1 && i <= middle && j <= high) {
             if (helper[i] <= helper[j]) {
                 vetor[k] = helper[i];
+                trocas++;
                 i++;
             } else {
                 vetor[k] = helper[j];
+                trocas++;
                 j++;
             }
             k++;
@@ -86,6 +89,7 @@ public class Merge extends Algorithms implements Sort {
         // Copy the rest of the left side of the array into the target array
         while (i <= middle) {
             vetor[k] = helper[i];
+            trocas++;
             k++;
             i++;
         }

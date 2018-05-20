@@ -13,26 +13,27 @@ public class Quick extends Algorithms implements Sort{
     public Result ordenarMelhorCaso (int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMelhorCaso();
-        return new Result(2, 10, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor);
+        return new Result(2, 10, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Melhor Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarCasoMedio(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicMedioCaso();
-        return new Result(2, 11, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Caso Medio", tamanhoVetor);
+        return new Result(2, 11, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Caso Medio", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public Result ordenarPiorCaso(int tamanhoVetor) {
         this.tamanhoVetor = tamanhoVetor;
         AlgorithmsResult resultado = magicPiorCaso();
-        return new Result(2, 12, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor);
+        return new Result(2, 12, resultado.getMedia(), resultado.getDesvioPadrao(), comparacoes,"Ordenacao Pior Caso", tamanhoVetor, resultado.getTrocas());
     }
 
     @Override
     public int sortMagic() {
         comparacoes = 0;
+        trocas = 0;
         long timeTotal = 0;
         long timeStart = System.currentTimeMillis();
         quickSort(vetor,0,vetor.length-1);
@@ -58,6 +59,7 @@ public class Quick extends Algorithms implements Sort{
                 dir = dir - 1;
             }
             if (comparacoes++>-1 && esq <= dir) {
+                trocas++;
                 troca = v[esq];
                 v[esq] = v[dir];
                 v[dir] = troca;
