@@ -27,6 +27,12 @@ public class Result {
         this.desvioPadrao = desvioPadrao;
     }
 
+    public Result (int cell, int row, double dado) {
+        this.cell = cell;
+        this.row = row;
+        this.dado = dado;
+    }
+
     public int getCell() {
         return cell;
     }

@@ -21,6 +21,7 @@ import response.Result;
 public class Report {
 
     private static final String NOME_ARQUIVO = "relatorio.xlsx";
+    private static final String NOME_ARQUIVO2 = "relatorio2.xlsx";
 
     public synchronized boolean atualizarRelatorio(ArrayList<Result> resultados) {
         boolean ok = false;
@@ -94,6 +95,55 @@ public class Report {
 
             // Escreve no arquivo
             FileOutputStream fileOut = new FileOutputStream(NOME_ARQUIVO);
+            workbook.write(fileOut);
+            fileOut.close();
+
+            // Fecha o workbook
+            workbook.close();
+
+            ok = true;
+        } catch (FileNotFoundException e) {
+            System.err.println("Nao foi possivel encontrar o arquivo solicitado.");
+        } catch (Exception e) {
+            System.err.println("Erro inesperado.");
+            e.printStackTrace();
+        }
+
+        return ok;
+    }
+
+    public boolean atualizarRelatorioParteDois (Result resultado) {
+        boolean ok = false;
+        try {
+
+            // Pegando o arquivo
+            File arquivo = new File(NOME_ARQUIVO2);
+            // Abrindo a leitura
+            FileInputStream leitura = new FileInputStream(arquivo);
+            // Pegando o workbook
+            XSSFWorkbook workbook = new XSSFWorkbook(leitura);
+            // Pegando a pasta dentro do xlsx
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            XSSFRow row;
+            XSSFCell cell;
+
+            // Pegando a linha
+            row = sheet.getRow(resultado.getRow());
+
+            // Pegando a celula
+            cell = row.getCell(resultado.getCell());
+
+            // Cria a celula caso nao exista
+            if (cell == null)
+                cell = row.createCell(resultado.getCell());
+
+            // Altera o tipo da celula e o dado que sera inserido
+            cell.setCellType(CellType.NUMERIC);
+            cell.setCellValue((int) resultado.getDado());
+
+            // Escreve no arquivo
+            FileOutputStream fileOut = new FileOutputStream(NOME_ARQUIVO2);
             workbook.write(fileOut);
             fileOut.close();
 
