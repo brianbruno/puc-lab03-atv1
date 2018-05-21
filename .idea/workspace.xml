@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9f8f855-56b0-4f0e-9b73-7b5b1ca35212" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/relatorio.xlsx" afterPath="$PROJECT_DIR$/relatorio.xlsx" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/src/file/Report.java" afterPath="$PROJECT_DIR$/src/file/Report.java" />
-      <change beforePath="$PROJECT_DIR$/src/response/Result.java" afterPath="$PROJECT_DIR$/src/response/Result.java" />
+      <change beforePath="$PROJECT_DIR$/relatorio - Copia (2).xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/relatorio - Copia.xlsx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/relatorio2 - Copia.xlsx" afterPath="$PROJECT_DIR$/relatorio2 - Copia.xlsx" />
+      <change beforePath="$PROJECT_DIR$/relatorio2.xlsx" afterPath="$PROJECT_DIR$/relatorio2.xlsx" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/AppParte2.java" afterPath="$PROJECT_DIR$/src/parte2/AppParte2.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/Arquivo.java" afterPath="$PROJECT_DIR$/src/parte2/Arquivo.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/FilaPrioridade.java" afterPath="$PROJECT_DIR$/src/parte2/FilaPrioridade.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/OrdemChegada.java" afterPath="$PROJECT_DIR$/src/parte2/OrdemChegada.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/OrdemMenorPrimeiro.java" afterPath="$PROJECT_DIR$/src/parte2/OrdemMenorPrimeiro.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/Ordenador.java" afterPath="$PROJECT_DIR$/src/parte2/Ordenador.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/Pedido.java" afterPath="$PROJECT_DIR$/src/parte2/Pedido.java" />
+      <change beforePath="$PROJECT_DIR$/src/parte2/Round.java" afterPath="$PROJECT_DIR$/src/parte2/Round.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,13 +26,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppParte2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppParte2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parte2/AppParte2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
+            <state relative-caret-position="309">
+              <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Round.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/parte2/Round.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-256">
+              <caret line="16" column="72" lean-forward="false" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+              <folding>
+                <element signature="e#237#245#0" expanded="true" />
+                <element signature="e#307#315#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Arquivo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/parte2/Arquivo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+              <folding>
+                <element signature="method#gravar#0;class#Arquivo#0" expanded="false" />
+                <element signature="method#regravar#0;class#Arquivo#0" expanded="false" />
+                <element signature="method#transferir#0;class#Arquivo#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -70,16 +104,16 @@
         <option value="$PROJECT_DIR$/src/sort/Shell.java" />
         <option value="$PROJECT_DIR$/src/sort/Algorithms.java" />
         <option value="$PROJECT_DIR$/src/App.java" />
-        <option value="$PROJECT_DIR$/src/parte2/Arquivo.java" />
-        <option value="$PROJECT_DIR$/src/parte2/Ordenador.java" />
-        <option value="$PROJECT_DIR$/src/parte2/Pedido.java" />
         <option value="$PROJECT_DIR$/src/parte2/principal.java" />
         <option value="$PROJECT_DIR$/src/response/Result.java" />
-        <option value="$PROJECT_DIR$/src/parte2/Round.java" />
-        <option value="$PROJECT_DIR$/src/parte2/OrdemChegada.java" />
+        <option value="$PROJECT_DIR$/src/file/Report.java" />
+        <option value="$PROJECT_DIR$/src/parte2/Ordenador.java" />
+        <option value="$PROJECT_DIR$/src/parte2/Pedido.java" />
         <option value="$PROJECT_DIR$/src/parte2/FilaPrioridade.java" />
         <option value="$PROJECT_DIR$/src/parte2/OrdemMenorPrimeiro.java" />
-        <option value="$PROJECT_DIR$/src/file/Report.java" />
+        <option value="$PROJECT_DIR$/src/parte2/OrdemChegada.java" />
+        <option value="$PROJECT_DIR$/src/parte2/Round.java" />
+        <option value="$PROJECT_DIR$/src/parte2/Arquivo.java" />
         <option value="$PROJECT_DIR$/src/parte2/AppParte2.java" />
       </list>
     </option>
@@ -115,6 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,10 +194,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,11 +358,12 @@
       <workItem from="1526223008043" duration="117000" />
       <workItem from="1526245436849" duration="5503000" />
       <workItem from="1526820086591" duration="9510000" />
+      <workItem from="1526940242093" duration="5602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21794000" />
+    <option name="totallyTimeSpent" value="27396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -342,11 +377,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.31578946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1366" y="23" width="1366" height="705" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.31578946" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="2" y="32" width="1362" height="694" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18835099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -401,21 +436,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sort/Insertion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sort/Algorithms.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="862">
@@ -445,7 +470,7 @@
         <state relative-caret-position="731">
           <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#atualizarRelatorio#0;class#Report#0" expanded="false" />
           </folding>
         </state>
@@ -520,7 +545,7 @@
         <state relative-caret-position="1003">
           <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#atualizarRelatorio#0;class#Report#0" expanded="false" />
           </folding>
         </state>
@@ -711,37 +736,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parte2/Ordenador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parte2/principal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#249#257#0" expanded="true" />
+            <element signature="e#249#257#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parte2/Arquivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parte2/Pedido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,60 +764,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/parte2/Ordenador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/parte2/OrdemChegada.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="204">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parte2/FilaPrioridade.java">
+    <entry file="file://$PROJECT_DIR$/src/parte2/Pedido.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="356">
+          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parte2/OrdemMenorPrimeiro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="153">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parte2/Round.java">
+    <entry file="file://$PROJECT_DIR$/src/parte2/FilaPrioridade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="53" column="33" lean-forward="false" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="e#237#245#0" expanded="true" />
-            <element signature="e#307#315#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/file/Report.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="114" column="46" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="46" />
+        <state relative-caret-position="187">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#atualizarRelatorio#0;class#Report#0" expanded="false" />
+            <element signature="method#atualizarRelatorioParteDois#0;class#Report#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../puc-lab03-tp1/src/arquivo/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="231" column="42" lean-forward="false" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parte2/Arquivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="method#gravar#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#regravar#0;class#Arquivo#0" expanded="false" />
+            <element signature="method#transferir#0;class#Arquivo#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parte2/AppParte2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="45" column="63" lean-forward="false" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
+        <state relative-caret-position="309">
+          <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parte2/Round.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="16" column="72" lean-forward="false" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+          <folding>
+            <element signature="e#237#245#0" expanded="true" />
+            <element signature="e#307#315#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -72,6 +72,17 @@ public class Pedido implements Comparable<Pedido> {
         return retorno;
     }
 
+    public int compareToFilaPrioridade (Pedido pedido) {
+        int retorno = 0;
+        if (getPreco() > pedido.getPreco()) {
+            retorno = -1;
+        } else if (getPreco() < pedido.getPreco()){
+            retorno = 1;
+        }
+
+        return retorno;
+    }
+
 	public double getDuracao() {
 		return duracao;
 	}

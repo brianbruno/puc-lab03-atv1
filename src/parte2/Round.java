@@ -14,6 +14,7 @@ public class Round extends Ordenador{
     private static List<Pedido> listaFinal = new ArrayList<Pedido>();
 
     public Round(List<Pedido> pedidos) {
+        System.out.println("###     Round Robin - INICIANDO       ###");
         preparaListaProntos(pedidos);
         // enquanto houver pedidos na lista de prontos
         while (!listaProntos.isEmpty()) {
@@ -43,15 +44,14 @@ public class Round extends Ordenador{
 		}
 	}
   
-    public Result simularFila() {
+    public Result simularFila(int i, long timeStart) {
 
-        System.out.println("\n################## Atendimento em Round Robin ##################\n");
-        long timeStart = System.currentTimeMillis();
+        //System.out.println("\n################## Atendimento em Round Robin ##################\n");
         exibirFila(listaFinal);
         long timeEnd = System.currentTimeMillis();
         long timeTotal = timeEnd - timeStart;
 
-        return new Result (1, 4, (int) timeTotal);
+        return new Result (1+i, 5, (int) timeTotal);
 
     }
 }

@@ -10,19 +10,19 @@ public class OrdemChegada extends Ordenador {
     private List<Pedido> pedidos;
 
     public OrdemChegada(List<Pedido> pedidos) {
+        System.out.println("###   Ordem de Chegada - INICIANDO    ###");
         this.pedidos = pedidos;
     }
 
-    public Result simularFila() {
+    public Result simularFila(int i, long timeStart) {
 
-        System.out.println("\n################## Atendimento em Ordem de Chegada ##################\n");
+        //System.out.println("\n################## Atendimento em Ordem de Chegada ##################\n");
         // mostra como a fila ficará
-        long timeStart = System.currentTimeMillis();
         exibirFila(pedidos);
         long timeEnd = System.currentTimeMillis();
         long timeTotal = timeEnd - timeStart;
 
-        return new Result(1, 3, (int) timeTotal);
+        return new Result(1+i, 4, (int) timeTotal);
 
     }
 

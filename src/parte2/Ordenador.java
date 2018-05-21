@@ -24,9 +24,9 @@ public class Ordenador {
             for (Pedido pedido : pedidos) {
                 double tempoLavagem = calcularTempo(pedido);
 
-                System.out.println("#ID: " + pedido.getId());
-                System.out.println("Cliente: " + pedido.getNome());
-                System.out.println("Tempo esperando na fila: " + formatarTempo((int) tempoTotal) + " Tempo de lavagem: " + formatarTempo((int) tempoLavagem) + "\n");
+                //System.out.println("#ID: " + pedido.getId());
+                //System.out.println("Cliente: " + pedido.getNome());
+                //System.out.println("Tempo esperando na fila: " + formatarTempo((int) tempoTotal) + " Tempo de lavagem: " + formatarTempo((int) tempoLavagem) + "\n");
 
                 // calcula o tempo de resposta desse pedido
                 tempoResposta = tempoResposta + tempoTotal;
@@ -34,8 +34,8 @@ public class Ordenador {
                 tempoTotal = tempoTotal + tempoLavagem;
             }
 
-            System.out.println("Tempo total: " + formatarTempo((int) tempoTotal));
-            System.out.println("Tempo medio aproximado de resposta: " + formatarTempo((int) tempoResposta / pedidos.size()));
+            //System.out.println("Tempo total: " + formatarTempo((int) tempoTotal));
+            //System.out.println("Tempo medio aproximado de resposta: " + formatarTempo((int) tempoResposta / pedidos.size()));
         }
     }
 

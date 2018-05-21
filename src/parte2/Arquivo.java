@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Arquivo {
@@ -112,24 +114,30 @@ public class Arquivo {
 	}
 
 
-	public String lerLinha() {
-		String linha=null;
+	public List<Pedido> lerArquivo(int data) {
+		String linha = null;
+		List<Pedido> pedidos = null;
 		try {
-			File arquivo = new File("dados.txt");
+			File arquivo = new File("dados/dados" + (10 + data) + ".txt");
 			FileReader ler = new FileReader(arquivo);
 			BufferedReader lerb = new BufferedReader(ler);
-			lerb.readLine();
-			for(int i=0;i<contl;i++) {
-				lerb.readLine();
+
+			pedidos = new ArrayList<>();
+
+			while ((linha = lerb.readLine()) != null) {
+				String[] pedido = linha.split(";");
+				pedido[2] = pedido[2].substring(3).replace(",", ".");
+				Pedido px = new Pedido(pedido[0], Double.parseDouble(pedido[1]), 0, Double.parseDouble(pedido[2]));
+
+				pedidos.add(px);
 			}
-			linha = lerb.readLine();
+
 			lerb.close();
 			ler.close();
-			contl++;
 		} catch (IOException e) {
 			System.out.println("Arquivo n�o existe");
 		}
-		return linha;
+		return pedidos;
 	}
 
 }
